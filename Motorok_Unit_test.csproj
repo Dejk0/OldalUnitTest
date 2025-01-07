@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SajatOldalProba\SajatOldalProba.csproj" />
+    <ProjectReference Include="..\SajatOldalProba\SajatOldal.csproj" />
   </ItemGroup>
 
   <ItemGroup>

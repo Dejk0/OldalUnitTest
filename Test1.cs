@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using SajatOldalProba.Models;
+using SajatOldal.Models.Motorok;
 namespace Motorok_Unit_test
 {
     [TestClass]
