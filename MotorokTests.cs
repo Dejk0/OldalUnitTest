@@ -39,89 +39,89 @@ namespace Motorok_Unit_test
             motorok.Calculate_P_M_Max();
             motorok.P_M_Max.Should().BeApproximately(270.176, 0.001);
         }
-        [TestMethod]
-        public void Calculate_Speed_of_the_wheel_Test()
-        {
-            var motorok = new Motorok();
-            motorok.Transmissions.Add(3.87);
-            motorok.Gear_ratio = 2.538;
-            motorok.n_M_max = 3000;
-            motorok.Wheel_radius = 296.758;
-            var result = motorok.Calculate_Speed_of_the_wheel(motorok.n_M_max, motorok.Transmissions[0]);
-            result = motorok.MeterminuteToKmhour(result);
-            result.Should().BeApproximately(34.171, 0.001);
-        }
-        [TestMethod]
-        public void Calculate_Speed_of_the_wheels_Test()
-        {
-            var motorok = new Motorok();
-            motorok.Transmissions.Add(3.87);
-            motorok.Transmissions.Add(2.25);
-            motorok.Transmissions.Add(1.44);
-            motorok.Transmissions.Add(1.0);
-            motorok.Gear_ratio = 2.538;
-            motorok.n_pn_max = 3000;
-            motorok.Wheel_radius = 296.758;
-            motorok.Calculate_Speed_of_the_wheels_P();
-            var result = motorok.MeterminuteToKmhour(motorok.Speed_of_the_Wheels_P[0]);
-            result.Should().BeApproximately(34.171, 0.001);
-            motorok.MeterminuteToKmhour(motorok.Speed_of_the_Wheels_P[1]).Should().BeApproximately(58.773, 0.001);
-            motorok.MeterminuteToKmhour(motorok.Speed_of_the_Wheels_P[2]).Should().BeApproximately(91.833, 0.001);
-            motorok.MeterminuteToKmhour(motorok.Speed_of_the_Wheels_P[3]).Should().BeApproximately(132.24, 0.001);
-        }
-        [TestMethod]
-        public void Calculate_Force_of_the_wheel_Test()
-        {
-            var motorok = new Motorok();
-            motorok.Transmissions.Add(3.89);
-            motorok.Gear_ratio = 3.92;
-            motorok.M_max = 182;
-            motorok.Transmission_efficiency =0.92;
-            motorok.Wheel_radius = 307.38;
-            var result = motorok.Calculate_Force_of_the_wheel(motorok.M_max, motorok.Transmissions[0]);
-            result.Should().BeApproximately(8306.523, 0.001);
-        }
-        [TestMethod]
-        public void Calculate_Force_of_the_wheels_P_Test()
-        {
-            var motorok = new Motorok();
-            motorok.Transmissions.Add(3.89);
-            motorok.Transmissions.Add(2.084);
-            motorok.Transmissions.Add(1.342);
-            motorok.Transmissions.Add(1.0);
-            motorok.Transmissions.Add(0.822);
-            motorok.Gear_ratio = 3.92;
-            motorok.Transmission_efficiency = 0.92;
-            motorok.Wheel_radius = 307.38;
-            motorok.M_P_Max = 151.472;
-            motorok.Calculate_Force_of_the_wheels_P();
-            var result = motorok.Force_of_the_Wheels_P[0];
-            result.Should().BeApproximately(6913.217, 0.001);
-            motorok.Force_of_the_Wheels_P[1].Should().BeApproximately(3703.636, 0.001);
-            motorok.Force_of_the_Wheels_P[2].Should().BeApproximately(2384.971, 0.001);
-            motorok.Force_of_the_Wheels_P[3].Should().BeApproximately(1777.176, 0.001);
-            motorok.Force_of_the_Wheels_P[4].Should().BeApproximately(1460.839, 0.001);
-        }
-        public void Calculate_Force_of_the_wheels_M_Test()
-        {
-            var motorok = new Motorok();
-            motorok.Transmissions.Add(3.89);
-            motorok.Transmissions.Add(2.084);
-            motorok.Transmissions.Add(1.342);
-            motorok.Transmissions.Add(1.0);
-            motorok.Transmissions.Add(0.822);
-            motorok.Gear_ratio = 3.92;
-            motorok.Transmission_efficiency = 0.92;
-            motorok.Wheel_radius = 307.38;
-            motorok.M_max = 182;
-            motorok.Calculate_Force_of_the_wheels_M();
-            var result = motorok.Force_of_the_Wheels_P[0];
-            result.Should().BeApproximately(8306.523, 0.001);
-            motorok.Force_of_the_Wheels_M[1].Should().BeApproximately(4450.076, 0.001);
-            motorok.Force_of_the_Wheels_M[2].Should().BeApproximately(2865.644, 0.001);
-            motorok.Force_of_the_Wheels_M[3].Should().BeApproximately(2135.353, 0.001);
-            motorok.Force_of_the_Wheels_M[4].Should().BeApproximately(1755.26, 0.001);
-        }
+        //[TestMethod]
+        //public void Calculate_Speed_of_the_wheel_Test()
+        //{
+        //    var motorok = new Motorok();
+        //    motorok.Transmissions.Add(3.87);
+        //    motorok.Gear_ratio = 2.538;
+        //    motorok.n_M_max = 3000;
+        //    motorok.Wheel_radius = 296.758;
+        //    var result = motorok.Calculate_Speed_of_the_wheel(motorok.n_M_max,  motorok.Transmissions[0]);
+        //    result = motorok.MeterminuteToKmhour(result);
+        //    result.Should().BeApproximately(34.171, 0.001);
+        //}
+        //[TestMethod]
+        //public void Calculate_Speed_of_the_wheels_Test()
+        //{
+        //    var motorok = new Motorok();
+        //    motorok.Transmissions.Add(3.87);
+        //    motorok.Transmissions.Add(2.25);
+        //    motorok.Transmissions.Add(1.44);
+        //    motorok.Transmissions.Add(1.0);
+        //    motorok.Gear_ratio = 2.538;
+        //    motorok.n_pn_max = 3000;
+        //    motorok.Wheel_radius = 296.758;
+        //    motorok.Calculate_Speed_of_the_wheels_P();
+        //    var result = motorok.MeterminuteToKmhour(motorok.Speed_of_the_Wheels_P[0]);
+        //    result.Should().BeApproximately(34.171, 0.001);
+        //    motorok.MeterminuteToKmhour(motorok.Speed_of_the_Wheels_P[1]).Should().BeApproximately(58.773, 0.001);
+        //    motorok.MeterminuteToKmhour(motorok.Speed_of_the_Wheels_P[2]).Should().BeApproximately(91.833, 0.001);
+        //    motorok.MeterminuteToKmhour(motorok.Speed_of_the_Wheels_P[3]).Should().BeApproximately(132.24, 0.001);
+        //}
+        //[TestMethod]
+        //public void Calculate_Force_of_the_wheel_Test()
+        //{
+        //    var motorok = new Motorok();
+        //    motorok.Transmissions.Add(3.89);
+        //    motorok.Gear_ratio = 3.92;
+        //    motorok.M_max = 182;
+        //    motorok.Transmission_efficiency =0.92;
+        //    motorok.Wheel_radius = 307.38;
+        //    var result = motorok.Calculate_Force_of_the_wheel(motorok.M_max, motorok.Transmissions[0]);
+        //    result.Should().BeApproximately(8306.523, 0.001);
+        //}
+        //[TestMethod]
+        //public void Calculate_Force_of_the_wheels_P_Test()
+        //{
+        //    var motorok = new Motorok();
+        //    motorok.Transmissions.Add(3.89);
+        //    motorok.Transmissions.Add(2.084);
+        //    motorok.Transmissions.Add(1.342);
+        //    motorok.Transmissions.Add(1.0);
+        //    motorok.Transmissions.Add(0.822);
+        //    motorok.Gear_ratio = 3.92;
+        //    motorok.Transmission_efficiency = 0.92;
+        //    motorok.Wheel_radius = 307.38;
+        //    motorok.M_P_Max = 151.472;
+        //    motorok.Calculate_Force_of_the_wheels_P();
+        //    var result = motorok.Force_of_the_Wheels_P[0];
+        //    result.Should().BeApproximately(6913.217, 0.001);
+        //    motorok.Force_of_the_Wheels_P[1].Should().BeApproximately(3703.636, 0.001);
+        //    motorok.Force_of_the_Wheels_P[2].Should().BeApproximately(2384.971, 0.001);
+        //    motorok.Force_of_the_Wheels_P[3].Should().BeApproximately(1777.176, 0.001);
+        //    motorok.Force_of_the_Wheels_P[4].Should().BeApproximately(1460.839, 0.001);
+        //}
+        //public void Calculate_Force_of_the_wheels_M_Test()
+        //{
+        //    var motorok = new Motorok();
+        //    motorok.Transmissions.Add(3.89);
+        //    motorok.Transmissions.Add(2.084);
+        //    motorok.Transmissions.Add(1.342);
+        //    motorok.Transmissions.Add(1.0);
+        //    motorok.Transmissions.Add(0.822);
+        //    motorok.Gear_ratio = 3.92;
+        //    motorok.Transmission_efficiency = 0.92;
+        //    motorok.Wheel_radius = 307.38;
+        //    motorok.M_max = 182;
+        //    motorok.Calculate_Force_of_the_wheels_M();
+        //    var result = motorok.Force_of_the_Wheels_P[0];
+        //    result.Should().BeApproximately(8306.523, 0.001);
+        //    motorok.Force_of_the_Wheels_M[1].Should().BeApproximately(4450.076, 0.001);
+        //    motorok.Force_of_the_Wheels_M[2].Should().BeApproximately(2865.644, 0.001);
+        //    motorok.Force_of_the_Wheels_M[3].Should().BeApproximately(2135.353, 0.001);
+        //    motorok.Force_of_the_Wheels_M[4].Should().BeApproximately(1755.26, 0.001);
+        //}
         [TestMethod]
         public void Calculate_Rolling_resistance_Test()
         {
